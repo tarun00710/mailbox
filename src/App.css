@@ -1,42 +1,88 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+  --filter-color: #e1e4ea;
+  --border-color: #cfd2dc;
+  --accent-color: #e54065;
+  --background-color: #f4f5f9;
+  --read-background: #f2f2f2;
+  --text-color: #636363;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 20px 40px 0 20px;
+  box-sizing: border-box;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.filter_wrapper {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 16px;
+  font-weight: 500;
+  align-items: center;
+}
+.filter_label {
+  padding: 0 8px 0px 8px;
+  cursor: pointer;
 }
 
-.card {
-  padding: 2em;
+.filter_active {
+  border-radius: 20px;
+  background-color: var(--filter-color);
+}
+.email_list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 20px;
 }
 
-.read-the-docs {
-  color: #888;
+.email_card {
+  display: flex;
+  gap: 10px;
+  align-items: start;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.email_card:hover{
+  background-color: rgb(236, 236, 236);
+}
+
+.email_card_right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.avatar {
+  display: flex;
+  background-color: var(--accent-color);
+  height: 50px;
+  width: 50px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.avatar-text {
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+}
+.text-500 {
+  font-weight: 500;
+}
+
+.email_time{
+  font-size: 12px;
 }
