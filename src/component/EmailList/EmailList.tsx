@@ -1,4 +1,3 @@
-import React from "react";
 import { Email, EmailListType } from "../../types";
 import EmailCard from "../EmailCard/EmailCard";
 

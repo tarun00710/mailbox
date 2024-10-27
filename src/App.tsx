@@ -12,7 +12,7 @@ function App() {
   const [emailDetails, setEmailDetails] = useState<Email>();
 
   useEffect(() => {
-    const getAllEmail = fetch("https://flipkart-email-mock.now.sh/?page=")
+     fetch("https://flipkart-email-mock.now.sh/?page=")
       .then((res) => res.json())
       .then((list) => {
         const emailList = list?.list?.map((emails: EmailListType) => ({

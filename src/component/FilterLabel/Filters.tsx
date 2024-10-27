@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FilterType } from "../../types";
 
 const Filters = ({
