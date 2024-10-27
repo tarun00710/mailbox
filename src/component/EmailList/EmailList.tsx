@@ -1,18 +1,27 @@
-import React from 'react'
-import { EmailListType } from '../../types'
-import EmailCard from '../EmailCard/EmailCard'
+import React from "react";
+import { Email, EmailListType } from "../../types";
+import EmailCard from "../EmailCard/EmailCard";
 
-const EmailList = ({list}:{list : EmailListType}) => {
-  console.log("emaillist",list)
+const EmailList = ({
+  list,
+  handleEmailOpen,
+}: {
+  list: EmailListType;
+  handleEmailOpen: (id: string, emailData: Email) => void;
+}) => {
   return (
-    <div className='email_list'>{
-      list?.map((email)=>{
+    <div className="email_list">
+      {list?.map((email) => {
         return (
-          <EmailCard key={email.id} emailData={email}/>
-        )
-      })
-    }</div>
-  )
-}
+          <EmailCard
+            key={email.id}
+            emailData={email}
+            handleEmailClick={handleEmailOpen}
+          />
+        );
+      })}
+    </div>
+  );
+};
 
-export default EmailList
+export default EmailList;

@@ -1,11 +1,19 @@
-import React from "react";
 import { Email } from "../../types";
 import { formatTimestamp } from "../../utils";
 
-const EmailCard = ({ emailData }: { emailData: Email }) => {
+const EmailCard = ({
+  emailData,
+  handleEmailClick,
+}: {
+  emailData: Email;
+  handleEmailClick: (id: string, emailData: Email) => void;
+}) => {
   const avatarText = emailData.from.name[0].toUpperCase();
   return (
-    <div className="email_card">
+    <div
+      className="email_card"
+      onClick={() => handleEmailClick(emailData.id, emailData)}
+    >
       <div className="avatar">
         <span className="avatar-text">{avatarText}</span>
       </div>
@@ -21,7 +29,12 @@ const EmailCard = ({ emailData }: { emailData: Email }) => {
         </div>
 
         <p>{emailData.short_description}</p>
-        <span className="email_time">{formatTimestamp(emailData.date)}</span>
+        <div className="email_card_footer">
+          <span className="email_time">{formatTimestamp(emailData.date)}</span>
+          {emailData.isFavourite && (
+            <span className="email_time email_favorite">Favorite</span>
+          )}
+        </div>
       </div>
     </div>
   );

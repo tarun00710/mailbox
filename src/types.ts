@@ -8,7 +8,8 @@ export interface Email {
     subject: string;
     short_description: string;
     isRead:boolean,
-    isFavourite:boolean
+    isFavourite:boolean;
+    body?:string
 }[]
 
 export type FilterType = "ALL" | "UNREAD" | "READ" | "FAVORITES" 
